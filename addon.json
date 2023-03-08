@@ -1,0 +1,14 @@
+{
+  "title": "[TTT] Customizable Discord Muting/Deafening",
+  "type": "ServerContent",
+  "tags": ["fun", "realism"],
+  "ignore": [
+    ".git",
+    ".gitignore",
+    ".gitattributes",
+    "readme.md",
+    ".workshop.yaml",
+    "LICENSE",
+    "addon.jpg"
+  ]
+}
