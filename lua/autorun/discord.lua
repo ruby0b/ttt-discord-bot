@@ -131,7 +131,7 @@ hook.Add("PlayerSay", "discord/PlayerSay", function(ply, msg)
 
     local steam_id = discord_ply:SteamID()
     DISCORD.player_map:set(steam_id, discord_id)
-    ULib.tsay(ply, "[DISCORD] Successfully bound " .. steam_id .. " to Discord ID " .. discord_id)
+    ULib.tsay(nil, "[DISCORD] Successfully bound " .. steam_id .. " to Discord ID " .. discord_id)
     return ""
 end)
 

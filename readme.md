@@ -55,9 +55,9 @@ discord_ttt_postround_active (default: 0)     Treat TTT postround as active?
 ## Discord Account Mapping
 
 We need to know every player's [Discord user ID](https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID-):
-Players (with the `discord_manage` ULib permission) can type `!discord DISCORD_ID` to set their own Discord account.
+Players can type `!discord DISCORD_ID` to set their own Discord account.
 
-Admins (with the `discord_manage_others` ULib permission) can also type `!discord DISCORD_ID PLAYER_NAME` to set other players' Discord accounts for them.
+Superadmins can also type `!discord DISCORD_ID PLAYER_NAME` to set other players' Discord accounts for them.
 
 (You could also just manually edit `garrysmod/data/discord_player_map.json` and insert the [steamID](https://www.steamidfinder.com/) → Discord user ID mappings as JSON: `{ "STEAM_0:0:123456789": "123456789123456789" }`)
 
