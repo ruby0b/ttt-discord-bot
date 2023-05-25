@@ -13,8 +13,7 @@ Some common example configurations are included below.
 3. Create a discord bot, add it to your server and give it permission to deafen and mute members.
 4. Set `discord_token` to your bot's token.
 5. Set `discord_guild` to your [discord server ID](https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID-).
-6. Create `garrysmod/data/discord_player_map.json` and insert your [steamID](https://www.steamidfinder.com/) → [discord user ID](https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID-) mappings as JSON: `{ "STEAM_0:0:123456789": "123456789123456789" }`
-7. Configure the ConVars to your liking (the default values won't do anything).
+6. Configure the ConVars to your liking (the default values won't do anything).
 
 ## Example Configurations
 
@@ -53,10 +52,18 @@ discord_ttt_preparing_active (default: 0)     Treat TTT preparing as active?
 discord_ttt_postround_active (default: 0)     Treat TTT postround as active?
 ```
 
+## Discord Account Mapping
+
+We need to know every player's [Discord user ID](https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID-):
+Players (with the `discord_manage` ULib permission) can type `!discord DISCORD_ID` to set their own Discord account.
+
+Admins (with the `discord_manage_others` ULib permission) can also type `!discord DISCORD_ID PLAYER_NAME` to set other players' Discord accounts for them.
+
+(You could also just manually edit `garrysmod/data/discord_player_map.json` and insert the [steamID](https://www.steamidfinder.com/) → Discord user ID mappings as JSON: `{ "STEAM_0:0:123456789": "123456789123456789" }`)
+
 ## Commands
 
-+ `discord_pause` Pause / Unpause the Discord addon. Pausing will temporarily unmute and undeafen everyone. This can come in handy when you want to announce something mid-game or when the addon somehow gets stuck. I personally use a binding for this: `bind p discord_pause`
-
+- `discord_pause` Pause / Unpause the Discord addon. Pausing will temporarily unmute and undeafen everyone. This can come in handy when you want to announce something mid-game or when the addon somehow gets stuck. I personally use a binding for this: `bind p discord_pause`
 
 ## Implementation
 
@@ -65,7 +72,6 @@ That is why other discord addons communicate with an external Discord bot via lo
 This addon uses the approach from [TTT Discord Immersion](https://github.com/Owningle/TTT-Discord-Immersion) instead which is using [CHTTP](https://github.com/timschumi/gmod-chttp).
 CHTTP uses a different User-Agent, meaning that we can directly communicate with Discord from our GMod server.
 In fact, the addon only uses simple [modify member](https://discord.com/developers/docs/resources/guild#modify-guild-member) PATCH requests and as such will not have to deal with Discord's new Intents system.
-
 
 ## Credits
 
